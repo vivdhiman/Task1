@@ -3,6 +3,7 @@ import AD1 from './ad1.mp4';
 import AD2 from './ad2.mp4';
 import AD3 from './ad3.mp4';
 import AD4 from './ad4.mp4';
+import Fade from 'react-reveal/Fade';
 
 export default class App extends Component {
   constructor() {
@@ -41,32 +42,41 @@ export default class App extends Component {
           {(this.state.clicked) ?
             <div>
               <div className="row-wrapper">
-                <div className="row-inner-left">
-                  <button id="0" className=" animate__animated animate__fadeInTopLeft button" onClick={this.handleClick}>
-                    Video 1
-                  </button>
-                </div>
-                <div className="row-inner-right">
-                  <button id="1" className="button" onClick={this.handleClick}>
-                    Video 2
-                  </button>
-                </div>
+                <Fade top left>
+                  <div className="row-inner-left">
+                    <button id="0" className="button" onClick={this.handleClick}>
+                      Video 1
+                    </button>
+                  </div>
+                </Fade>
+                <Fade top right>
+                  <div className="row-inner-right">
+                    <button id="1" className="button" onClick={this.handleClick}>
+                      Video 2
+                    </button>
+                  </div>
+                </Fade>
               </div>
+
               <div className="row-wrapper">
-                <div className="row-inner-left">
-                  <button id="2" className="button" onClick={this.handleClick}>
-                    Video 3
-                  </button>
-                </div>
-                <div className="row-inner-right">
-                  <button id="3" className="button" onClick={this.handleClick}>
-                    Video 4
-                  </button>
-                </div>
+                <Fade bottom left>
+                  <div className="row-inner-left">
+                    <button id="2" className="button" onClick={this.handleClick}>
+                      Video 3
+                    </button>
+                  </div>
+                </Fade>
+                <Fade bottom right>
+                  <div className="row-inner-right">
+                    <button id="3" className="button" onClick={this.handleClick}>
+                      Video 4
+                    </button>
+                  </div>
+                </Fade>
               </div>
             </div>
             :
-            <video className="video-wrapper" autoPlay >
+            <video className="video-wrapper" autoPlay preload >
               <source src={this.state.videos[this.state.index]} type="video/mp4" />
             </video>
           }
