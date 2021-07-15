@@ -1,0 +1,43 @@
+.wrapper {
+    margin: 0 auto;
+    margin-top: -8px;
+    width: 1500px;
+    background-color: coral;
+    height: 700px;
+    display: grid;
+}
+
+.row-wrapper {
+    width: 100%;
+    height: 50%;
+}
+
+.row-inner-left {
+    width: 50%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row-inner-right {
+    width: 50%;
+    height: 100%;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    width: 400px;
+    height: 250px;
+    border: 2px solid black;
+}
+
+.video-wrapper {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
